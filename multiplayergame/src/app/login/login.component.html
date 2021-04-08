@@ -1,0 +1,11 @@
+<div class="login-component" fxLayoutAlign= "center center" fxFlexFill >
+    <mat-card fxFlex="25" class="card-login">
+        <mat-toolbar  class="login-form">INICIO DE PARTIDA</mat-toolbar>
+      <form #LoginForm="ngForm" (ngSubmit)="loginUser()" fxLayoutAlign= "stretch" fxLayout="column">
+        <mat-form-field class="user-input" >
+          <input  matInput [(ngModel)]="user" type="text" name="user"  placeholder="Usuario"  >
+        </mat-form-field>
+        <button type="submit" value="Login" name="submit" (click)="loginUser()" routerLink= "/searching"  mat-raised-button  class="start-button">Inicio</button>
+      </form>
+      </mat-card>
+</div>
