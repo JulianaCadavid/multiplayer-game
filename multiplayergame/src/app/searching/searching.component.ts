@@ -12,4 +12,7 @@ export class SearchingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  continue(){
+    
+  }
 }
