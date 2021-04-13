@@ -1,12 +1,27 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserGame} from '../models/multiplayer-game.models';
+import { Socket } from 'ngx-socket-io';
+
 
 @Injectable({
     providedIn: 'root'
 })
-export class MultiplayerGameService{
+export class MultiplayerGameService extends Socket{
 
-    private URL= 'http://localhost:3000/multiplayergame'
+    constructor(){
+     super({url: 'https://triviador-backend.herokuapp.com/'},
+     )
+     this.ioSocket.on("sendQuestion",(question: object)=>{
+        console.log(question)
+    })
+    }
+
+    searchGame=(user: object)=>{
+        this.ioSocket.emit("searchGame", user);
+    }
+   
+   
+    
 
 }
