@@ -30,3 +30,31 @@
     display: inline-block;
     
 }
+
+.timer-card{
+    font-family: "Garamond", serif;
+    font-size: 25px;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    padding: 10px;
+}
+
+.user1-card{
+    font-family: "Garamond", serif;
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    padding: 10px;
+}
+
+.user2-card{
+    font-family: "Garamond", serif;
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    padding: 10px;
+}
+
