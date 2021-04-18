@@ -10,20 +10,22 @@ import { EventEmitter } from '@angular/core';
 })
 export class MultiplayerGameService extends Socket {
     callback: EventEmitter<any> = new EventEmitter();
+    callback1: EventEmitter<any> = new EventEmitter();
+    callback3: EventEmitter<any> = new EventEmitter();
     constructor() {
-        super({ url: 'http://localhost:3000/' },
+        super({ url: 'https://triviador-backend.herokuapp.com/' },
         )
         this.ioSocket.on("startGame", (question: object) => {
             this.callback.emit(question);
         })
 
         this.ioSocket.on("sendQuestion", (question: object) => {
-            console.log(question)
+            this.callback1.emit(question);
         })
 
 
         this.ioSocket.on("sendPoints", (dataPoint: object) => {
-            console.log(dataPoint)
+            this.callback3.emit(dataPoint);
         })
 
         this.ioSocket.on("endGame", () => {

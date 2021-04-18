@@ -11,12 +11,25 @@ import {MultiplayerGameService} from '../services/multiplayer-game.services';
 export class QuestionComponent implements OnInit {
 
   
-  user="Juan";
+  user1="";
+  user2="";
   question="HOLA";
   constructor(private multiplayerGameService: MultiplayerGameService){
     multiplayerGameService.callback.subscribe(data=>{
-      this.user=data.players[0].playerName;
-      console.log(this.user)
+      this.user1=data.players[0].playerName;
+      this.user2=data.players[1].playerName;
+      console.log(data)
+    })
+
+
+    multiplayerGameService.callback1.subscribe(data=>{
+      this.question=data.question.question;
+      console.log(data)
+    })
+
+
+    multiplayerGameService.callback3.subscribe(data=>{
+      console.log(data);
     })
   }
 
@@ -25,6 +38,14 @@ export class QuestionComponent implements OnInit {
  
   }
 
+
+  Prueba(){
+    this.multiplayerGameService.sendAnswer({
+       playerName: "Juan",
+       time: 2,
+       correct: true
+    })
+  }
 
 
 }
