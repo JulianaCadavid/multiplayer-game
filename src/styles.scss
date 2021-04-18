@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.login-component{
+    background: url("./assets/background.jpg");
+    background-size: 1350px;
+}
+
+.searching-component{
+    background: url("./assets/background1.jpg");
+    background-size: 1350px;
+}
+
+.question-component{
+    background: url("./assets/background2.jpg");
+    background-size: 1350px;
+}
+
+.results-component{
+    background: url("./assets//background3.jpg");
+    background-size: 1350px;
+}

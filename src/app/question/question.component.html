@@ -1,0 +1,23 @@
+<div class="question-component" fxLayoutAlign= "center center" fxFlexFill >
+    <mat-card fxFlex="25" class="card-question">
+        <mat-toolbar  class="question-form">
+            Pregunta 1:<mat-toolbar-row> {{question}} </mat-toolbar-row> </mat-toolbar>
+        <form  fxLayoutAlign= "stretch" fxLayout="column">
+        <button mat-button class="answers" (click)="cd1.restart()">Respuesta 1: {{answer1}}</button>
+        <button mat-button class="answers"  (click)="cd1.restart()">Respuesta 2: {{answer2}}</button>
+        <button mat-button class="answers"  (click)="cd1.restart()">Respuesta 3: {{answer3}}</button>
+        <button mat-button class="answers" (click)="cd1.restart()">Respuesta 4: {{answer4}}</button> 
+        <button mat-button class="answers" routerLink="/results" >Continuar-prueba</button> 
+        </form>
+    </mat-card>
+   
+    <mat-card class="timer-card">
+        <countdown #cd1 [config]="{leftTime: 20}"></countdown>
+    </mat-card>
+    <mat-card class="user1-card">Usuario 1: {{user1}} </mat-card>
+    <mat-card class="points1-card">Puntos: {{point1}}</mat-card>
+    <img class="c1" src="./../../assets/c1.gif" >
+    <mat-card class="user2-card">Usuario 2: {{user2}}</mat-card>
+    <mat-card class="points2-card">Puntos: {{point2}}</mat-card>
+    <img class="c2" src="./../../assets/c2.gif" >
+</div>
