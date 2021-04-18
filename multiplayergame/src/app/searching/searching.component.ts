@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { LoginComponent} from '../login/login.component';
-import {SharedService} from '../services/shared.service';
 import { MultiplayerGameService} from '../services/multiplayer-game.services';
 
 @Component({

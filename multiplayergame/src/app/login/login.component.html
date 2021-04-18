@@ -3,7 +3,7 @@
       <mat-toolbar  class="login-form">INICIO DE PARTIDA</mat-toolbar>
     <form #LoginForm="ngForm" (ngSubmit)="loginUser()" fxLayoutAlign= "stretch" fxLayout="column">
       <mat-form-field class="user-input" >
-        <input  matInput [(ngModel)]="user" type="text" name="user"  placeholder="Usuario"  required/>
+        <input   [(ngModel)]="user" type="text" name="user"  placeholder="Usuario"  required/>
       </mat-form-field>
       <button type="submit" value="Login" name="submit" (click)="loginUser()" routerLink= "/searching"  mat-raised-button  class="start-button">Inicio</button>
     </form>

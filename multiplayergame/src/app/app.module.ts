@@ -17,6 +17,8 @@ import {FormsModule} from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
 import {CountdownModule} from 'ngx-countdown';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
