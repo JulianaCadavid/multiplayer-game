@@ -2,10 +2,12 @@
         <mat-toolbar class="game-form"  >
                 <span>BUSCANDO COMPETIDOR...</span>
         </mat-toolbar>
-        <mat-card class="user-1"  fxFlex="25" layout=”column”>Usuario 1:</mat-card>
-        <mat-card class="user-2"  fxFlex="25" layout=”column”>Usuario 2:</mat-card>
+        <mat-card class="user-1"  fxFlex="25" layout=”column”>Usuario 1:{{user}}</mat-card>
+        <mat-card class="user-2"  fxFlex="25" layout=”column”>Usuario 2:{{user}}</mat-card>
         <button type="submit" value="Continue" name="submit" (click)="continue()" routerLink= "/questions"  mat-raised-button  class="continue-button">CONTINUAR</button>
 </div>
+
+
 
 
 

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { LoginComponent} from '../login/login.component';
+import {SharedService} from '../services/shared.service';
+import { MultiplayerGameService} from '../services/multiplayer-game.services';
 
 @Component({
   selector: 'app-searching',
@@ -7,12 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchingComponent implements OnInit {
 
-  constructor() { }
+ @Input() 
+  user= {};
 
-  ngOnInit(): void {
+  constructor(private MultiplayerGameService: MultiplayerGameService) { }
+  
+
+  ngOnInit() {
+    this.MultiplayerGameService.searchGame(this.user);
   }
 
   continue(){
-    
-  }
+ }
 }

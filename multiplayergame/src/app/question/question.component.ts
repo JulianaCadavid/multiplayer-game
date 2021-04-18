@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-//import { QuestionService } from '../services/question.services';
+import { Component, OnInit, Input } from '@angular/core';
+import { MultiplayerGameService } from '../services/multiplayer-game.services';
+import { CountdownModule } from 'ngx-countdown';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-question',
@@ -9,25 +11,21 @@ import { Router } from '@angular/router';
 })
 export class QuestionComponent implements OnInit {
 
- 
- //77 constructor(private router:Router, private questionService: QuestionService) {  }
-
-  ngOnInit(): void {
-    //this.questionService.seconds = 0;
-    //this.questionService.qnProgress= 0;
-    //this.questionService.getQuestions().subscribe(
-     // (data:any)=>{
-       //   this.questionService.qns = data;
-        //  this.startTimer();
-      //}
-    //);
+  user={};
+  question={};
+ constructor(private MultiplayerGameService: MultiplayerGameService ) { 
+   
+  this.MultiplayerGameService.callback.subscribe(question=>{
+    console.log(question)
+   })
+  this.MultiplayerGameService.searchGame(this.user)
   }
 
-  /*startTimer(){
-    this.questionService.timer = setInterval(() =>{
-      this.questionService.seconds++;
-    }, 1000);
-  }*/
+  ngOnInit(): void{
+    
+  }
+
+
 
 }
 

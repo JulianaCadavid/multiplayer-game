@@ -15,6 +15,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SearchingComponent } from './searching/searching.component';
 import {FormsModule} from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
+import {CountdownModule} from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,10 @@ import { QuestionComponent } from './question/question.component';
     MatCardModule, 
     MatToolbarModule, 
     MatProgressSpinnerModule, 
-    FormsModule
+    FormsModule, 
+    CountdownModule
   ],
+  exports: [ MatFormFieldModule, MatInputModule ],
   providers: [],
   bootstrap: [AppComponent]
 })

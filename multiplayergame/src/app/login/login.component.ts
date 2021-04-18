@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { MultiplayerGameService } from '../services/multiplayer-game.services';
+
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,19 @@ export class LoginComponent  {
   constructor(private MultiplayerGameService: MultiplayerGameService){
 
   }
- 
-  user={};
+
+  @Output() event = new EventEmitter<object>();
+   user= {};
 
   loginUser(){
     console.log(this.user);
     this.MultiplayerGameService.searchGame(this.user);
   }
+
+  
+
+
+
 }
 
 
